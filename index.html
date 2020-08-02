@@ -8,15 +8,29 @@
   <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/fluent/80/000000/portfolio.png" />
 	<link rel="stylesheet" href="css/style.css" type="text/css">
   <link rel="stylesheet" href="css/skins/red.css" type="text/css">
+
+  <link rel="stylesheet" class="alternate-style" title="red" href="css/skins/red.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="blue" href="css/skins/blue.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="css/skins/orange.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="css/skins/yellow.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="css/skins/green.css" type="text/css" disabled>
+  <link rel="stylesheet" href="css/styleSwitcher.css" type="text/css">
+
 </head>
 
 <body>
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
   <div class="main-container">
 
     <div class="aside">
 
       <div class="logo">
-        <a href="#">Alin</a>
+        <a href="#home" class="active" id="name">Alin 
+          Portfolio
+        </a>
       </div>
 
       <div class="nav-toggler">
@@ -24,10 +38,10 @@
       </div>
 
       <ul class="nav">
-        <li><a href="#" class="active"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#"><i class="fa fa-user"></i> About Me</a></li>
-        <li><a href="#"><i class="fa fa-briefcase"></i> Portfolio</a></li>
-        <li><a href="#"><i class="fa fa-comments"></i> Contact</a></li>
+        <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fa fa-user"></i> About Me</a></li>
+        <li><a href="#my-work"><i class="fa fa-briefcase"></i> My work</a></li>
+        <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
       </ul>
       <div class="copyright-text">
         &reg; 2020 Dehelean Alin creation!
@@ -37,7 +51,7 @@
 
     <div class="main-content">
 
-      <section class="home section">
+      <section class="home section active" id="home">
         <div class="container">
           <div class="intro">
             <img src="images/about.jpg" alt="profile" class="shadow-dark">
@@ -53,7 +67,7 @@
         </div>  
       </section>
 
-      <section class="about section">
+      <section class="about section" id="about">
         <div class="container">
           <div class="row">
             <div class="section-title padd-15">
@@ -103,7 +117,6 @@
                   <div class="row">
                     <div class="buttons padd-15">
                       <a href="#" class="btn">Download CV</a>
-                      <a href="#" class="btn">Hire Me</a>
                     </div>
                   </div>
                 </div>
@@ -233,11 +246,11 @@
         </div>
       </section>
 
-      <section class="portofolio section">
+      <section class="portofolio section" id="my-work">
         <div class="container">
           <div class="row">
             <div class="section-title padd-15">
-              <h2>Portofolio</h2>
+              <h2>My Work</h2>
             </div>
           </div>
           <div class="row">
@@ -261,7 +274,9 @@
             <div class="portofolio-item padd-15">
               <div class="portofolio-item-inner shadow-dark">
                 <div class="portofolio-img">
-                  <img src="images/gamesApp.jpg" alt="portofolio">
+                  <iframe width="450" height="230"
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                  </iframe>
                 </div>
 
                 <div class="portofolio-info">
@@ -270,7 +285,7 @@
                     Este o aplicatie care aduce dintr-un API o colectie de jocuri apoi si care permite manipularea lor. Prima mea interactiune cu API si 
                     fetch!
                   </p>
-                  <p class="portofolio-git">Demo: <a href="https://www.youtube.com" target="_blank">Here!</a></p>
+                  <!-- <p class="portofolio-git">Demo: <a href="https://www.youtube.com" target="_blank">Here!</a></p> -->
                   <p class="portofolio-git">Code source: <a href="https://github.com/alindehelean/GamesApp---ES6">Git link</a></p>
                 </div>
               </div>
@@ -296,7 +311,7 @@
         </div>
       </section>
 
-      <section class="contact section">
+      <section class="contact section" id="contact">
         <div class="container">
           <div class="row">
             <div class="section-title padd-15">
@@ -360,7 +375,31 @@
         </div>
       </section>
     </div>
-  </div>  
+  </div>
+  <div class="style-switcher">
+    <h3>Style Switcher</h3>
+    <div class="toggle-style-switcher">
+      <i class="fa fa-cog fa-spin"></i>
+    </div>
+    <ul>
+      <li><a href="javascript:void(0);" title="red" style="background-color: #ec1839;" onclick="setActiveStyle('red')"></a></li>
+      <li><a href="javascript:void(0);" title="blue" style="background-color: #2196F3;" onclick="setActiveStyle('blue')"></a></li>
+      <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f;" onclick="setActiveStyle('orange')"></a></li>
+      <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400;" onclick="setActiveStyle('yellow')"></a></li>
+      <li><a href="javascript:void(0);" title="green" style="background-color: #72b626;" onclick="setActiveStyle('green')"></a></li>
+    </ul>
+    <h3>Body Skin</h3>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+      Light
+    </label>
+    <label>
+      <input type="radio" class="body-skin" name="body-style" value="dark">
+      Dark
+    </label>
+  </div>
+  <script src="js/script.js"></script>
+  <script src="js/styleSwitcher.js"></script>
 </body>
 </html>
 
