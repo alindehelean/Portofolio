@@ -666,7 +666,7 @@ input,textarea,select{
     border: 1px solid #d4d4e3;
 }
 
-.portofolio .portofolio-item-inner .portofolio-img iframe,
+.portofolio .portofolio-item-inner .portofolio-img video,
 .portofolio .portofolio-item-inner .portofolio-img img{
     width: 100%;
     display: block;
